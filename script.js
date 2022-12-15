@@ -82,10 +82,30 @@ const colorSelect = (event) => {
   event.target.classList.add('selected');
 }
 
+// Construindo a Função de Recuperar a Cor
+
 const recoverColor = () => {
   const getColor = document.getElementsByClassName('color');
   for (let index = 0; index < getColor.length; index += 1) {
     getColor[index].addEventListener('click', colorSelect);
+  }
+};
+
+// Construindo a Função de Evento ao Pintar
+
+const paintWhiteBoard = (event) => {
+  const eventPixel = event.target;
+  const selectedColor = document.querySelector('.selected');
+  eventPixel.style.backgroundColor = selectedColor.style.backgroundColor;
+};
+
+
+// Contruindo a Função de Pintar
+
+const paintBoard = () => {
+  const getPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < getPixel.length; index += 1) {
+    getPixel[index].addEventListener('click', paintWhiteBoard);
   }
 };
 
@@ -102,5 +122,6 @@ window.onload = () => {
       board();
       initialBlack();
       recoverColor();
+      paintBoard();
   };
 
