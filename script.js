@@ -28,7 +28,7 @@ const newColors = () => {
       palettediv[i].style.backgroundColor = color;
       colors.push(color);
     }
-    localStorage(colors);
+    localStorages(colors);
   };
 
 // Construindo a função de Trocar as Cores geradas
@@ -40,7 +40,7 @@ const buttomEvent = () => {
 
 // Construindo a Função de Salvar no LocalStorage a Cor
 
-const localStorage = (array) => {
+const localStorages = (array) => {
   localStorage.setItem('colorPalette', JSON.stringify(array));
 };
 
@@ -61,5 +61,8 @@ const recoverStorage = () => {
 
 window.onload = () => {
       buttomEvent();
+      newColors();
+      recoverStorage();
+      localStorages();
   };
 
