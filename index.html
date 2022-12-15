@@ -8,7 +8,12 @@
     <title>Projeto Pixel Art</title>
 </head>
 <body>
-    <header><h1 id="title">Paleta de Cores</h1></header>
+    <header><div id="container">
+        <label class="switch">
+          <input type="checkbox" onclick="changeMode()">
+          <span class="slider"></span></header>
+          <h1 id="title">Paleta de Cores</h1>
+        </header>
     <main>  
         <div id="color-palette">
             <div class="color"></div>
@@ -17,11 +22,9 @@
             <div class="color"></div>
         </div>
     </main>
-    <div id="container">
-        <label class="switch">
-          <input type="checkbox" onclick="changeMode()">
-          <span class="slider"></span>
-    <footer></footer>
+    <footer>
+        <button id="button-random-color">Cores Aleatóias</button>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
