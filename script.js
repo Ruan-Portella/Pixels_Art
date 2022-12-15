@@ -93,7 +93,7 @@ const recoverColor = () => {
 
 // Construindo a Função de Evento ao Pintar
 
-const paintWhiteBoard = (event) => {
+const paintEvent = (event) => {
   const eventPixel = event.target;
   const selectedColor = document.querySelector('.selected');
   eventPixel.style.backgroundColor = selectedColor.style.backgroundColor;
@@ -102,7 +102,7 @@ const paintWhiteBoard = (event) => {
 
 // Contruindo a Função de Pintar
 
-const paintBoard = () => {
+const paint = () => {
   const getPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < getPixel.length; index += 1) {
     getPixel[index].addEventListener('click', paintWhiteBoard);
@@ -122,6 +122,6 @@ window.onload = () => {
       board();
       initialBlack();
       recoverColor();
-      paintBoard();
+      paint();
   };
 
