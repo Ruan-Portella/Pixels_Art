@@ -124,6 +124,10 @@ h1{
     border: 1px solid black;
     display: inline-block;
 
-  }
+}
+
+#clear-board {
+    margin-left: 10px;
+}
 
 

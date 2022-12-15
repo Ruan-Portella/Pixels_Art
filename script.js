@@ -105,10 +105,20 @@ const paintEvent = (event) => {
 const paint = () => {
   const getPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < getPixel.length; index += 1) {
-    getPixel[index].addEventListener('click', paintWhiteBoard);
+    getPixel[index].addEventListener('click', paintEvent);
   }
 };
 
+
+const clearBoard = () => {
+  const buttom = document.getElementById('clear-board');
+  const pixel = document.getElementsByClassName('pixel');
+  buttom.addEventListener('click', () => {
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+};
 
 
 
@@ -123,5 +133,6 @@ window.onload = () => {
       initialBlack();
       recoverColor();
       paint();
+      clearBoard();
   };
 
