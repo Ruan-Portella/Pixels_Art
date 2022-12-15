@@ -28,6 +28,7 @@ const newColors = () => {
       palettediv[i].style.backgroundColor = color;
       colors.push(color);
     }
+    localStorage(colors);
   };
 
 // Construindo a função de Trocar as Cores geradas
@@ -35,13 +36,30 @@ const newColors = () => {
 const buttomEvent = () => {
   const event = document.querySelector('#button-random-color');
   event.addEventListener('click', newColors);
-  console.log('teste');
 };
+
+// Construindo a Função de Salvar no LocalStorage a Cor
+
+const localStorage = (array) => {
+  localStorage.setItem('colorPalette', JSON.stringify(array));
+};
+
+// Construindo a Função de Recuperar a Cor do LocalStorage
+
+const recoverStorage = () => {
+  const divs = document.querySelectorAll('.color');
+  const colors = JSON.parse(localStorage.getItem('colorPalette'));
+  divs[0].style.backgroundColor = 'black';
+  for (let index = 1; index < divs.length; index += 1) {
+    divs[index].style.backgroundColor = colors[index];
+  }
+};
+
+
 
 // #Construindo Minhas Chamadas de Funções  
 
 window.onload = () => {
-      newColors();
       buttomEvent();
   };
 
