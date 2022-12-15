@@ -78,6 +78,7 @@ function initialBlack() {
 };
 
 // Construindo a Função de Selecionar a Cor
+// Feito com a ajuda da aula do zeze
 
 function colorSelect(event) {
   const getSelected = document.querySelector('.selected');
@@ -86,6 +87,7 @@ function colorSelect(event) {
 }
 
 // Construindo a Função de Recuperar a Cor
+// Feito com a ajuda da aula do zeze
 
 function recoverColor() {
   const getColor = document.getElementsByClassName('color');
@@ -95,6 +97,7 @@ function recoverColor() {
 };
 
 // Construindo a Função de Evento ao Pintar
+// Feito com a ajuda da aula do zeze
 
 function paintEvent(event) {
   const eventPixel = event.target;
