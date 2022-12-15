@@ -1,6 +1,11 @@
 // #Construindo Minhas Funções
 
-// Construindo a função de gerar Cores
+// Construindo a função de gerar Core
+
+function changeMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
 
 const backgroundPalette = () => {
     const red = Math.floor(Math.random() * 255);
