@@ -55,7 +55,17 @@ const recoverStorage = () => {
   }
 };
 
+// Construindo a Função de Board
 
+const board = () => {
+  for (let index = 0; index < 25; index += 1) {
+    const div = document.getElementById('pixel-board')
+    const createDiv = document.createElement('div');
+    createDiv.classList.add('pixel');
+    createDiv.style.backgroundColor = 'white';
+    div.appendChild(createDiv);
+  }
+};
 
 // #Construindo Minhas Chamadas de Funções  
 
@@ -64,5 +74,6 @@ window.onload = () => {
       newColors();
       recoverStorage();
       localStorages();
+      board();
   };
 

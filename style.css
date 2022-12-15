@@ -104,3 +104,19 @@ h1{
         
 }
 
+#pixel-board{
+        width: 410px;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 38%;
+        margin-top: 5%;
+}
+.pixel {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+  }
+
+
