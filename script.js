@@ -67,6 +67,13 @@ const board = () => {
   }
 };
 
+// Construindo a Função de Iniciar com o Preto
+
+const initialBlack = () => {
+  const getColor = document.querySelectorAll('.color');
+  getColor[0].classList.add('selected');
+};
+
 // #Construindo Minhas Chamadas de Funções  
 
 window.onload = () => {
@@ -75,5 +82,6 @@ window.onload = () => {
       recoverStorage();
       localStorages();
       board();
+      initialBlack();
   };
 
