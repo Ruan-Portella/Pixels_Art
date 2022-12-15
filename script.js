@@ -7,9 +7,10 @@ function changeMode() {
   element.classList.toggle("dark-mode");
 }
 
-// Construindo a função de gerar Core
+// Construindo a função de gerar Cor
+// Feito com Ajuda de: https://wallacemaxters.com.br/blog/48/como-gerar-cores-aleatorias-no-javascript
 
-const randomColor = () => {
+function randomColor() {
     const red = Math.floor(Math.random() * 255);
     const green = Math.floor(Math.random() * 256);
     const blue = Math.floor(Math.random() * 256);
@@ -18,14 +19,15 @@ const randomColor = () => {
   };
 
 // Construindo a função de Adicionar as Cores geradas
+// Feito com Ajuda de Victor na Monitoria
 
-const newColors = () => {
+function newColors() {
     const colors = [];
-    const palettediv = document.querySelectorAll('.color');
-    for (let i = 0; i < palettediv.length; i += 1) {
+    const getColor = document.querySelectorAll('.color');
+    for (let i = 0; i < getColor.length; i += 1) {
       const color = randomColor();
-      palettediv[0].style.backgroundColor = 'black';
-      palettediv[i].style.backgroundColor = color;
+      getColor[0].style.backgroundColor = 'black';
+      getColor[i].style.backgroundColor = color;
       colors.push(color);
     }
     localStorages(colors);
@@ -33,20 +35,20 @@ const newColors = () => {
 
 // Construindo a função de Trocar as Cores geradas
 
-const buttomEvent = () => {
+function buttomEvent() {
   const event = document.querySelector('#button-random-color');
   event.addEventListener('click', newColors);
 };
 
 // Construindo a Função de Salvar no LocalStorage a Cor
 
-const localStorages = (array) => {
-  localStorage.setItem('colorPalette', JSON.stringify(array));
+function localStorages(colors){
+  localStorage.setItem('colorPalette', JSON.stringify(colors));
 };
 
 // Construindo a Função de Recuperar a Cor do LocalStorage
 
-const recoverStorage = () => {
+function recoverStorage() {
   const divs = document.querySelectorAll('.color');
   const colors = JSON.parse(localStorage.getItem('colorPalette'));
   divs[0].style.backgroundColor = 'black';
@@ -56,8 +58,9 @@ const recoverStorage = () => {
 };
 
 // Construindo a Função de Board
+// Feito com ajuda do Matheus na aula de Palavra Cruzada
 
-const board = () => {
+function board() {
   for (let index = 0; index < 25; index += 1) {
     const div = document.getElementById('pixel-board')
     const createDiv = document.createElement('div');
@@ -69,14 +72,14 @@ const board = () => {
 
 // Construindo a Função de Iniciar com o Preto
 
-const initialBlack = () => {
+function initialBlack() {
   const getColor = document.querySelectorAll('.color');
   getColor[0].classList.add('selected');
 };
 
 // Construindo a Função de Selecionar a Cor
 
-const colorSelect = (event) => {
+function colorSelect(event) {
   const getSelected = document.querySelector('.selected');
   getSelected.classList.remove('selected');
   event.target.classList.add('selected');
@@ -84,7 +87,7 @@ const colorSelect = (event) => {
 
 // Construindo a Função de Recuperar a Cor
 
-const recoverColor = () => {
+function recoverColor() {
   const getColor = document.getElementsByClassName('color');
   for (let index = 0; index < getColor.length; index += 1) {
     getColor[index].addEventListener('click', colorSelect);
@@ -93,7 +96,7 @@ const recoverColor = () => {
 
 // Construindo a Função de Evento ao Pintar
 
-const paintEvent = (event) => {
+function paintEvent(event) {
   const eventPixel = event.target;
   const selectedColor = document.querySelector('.selected');
   eventPixel.style.backgroundColor = selectedColor.style.backgroundColor;
@@ -102,7 +105,7 @@ const paintEvent = (event) => {
 
 // Contruindo a Função de Pintar
 
-const paint = () => {
+function paint() {
   const getPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < getPixel.length; index += 1) {
     getPixel[index].addEventListener('click', paintEvent);
@@ -111,7 +114,7 @@ const paint = () => {
 
 // Contruindo a Função de Pintar em branco
 
-const white = () => { 
+function white() { 
 
 for (let index = 0; index < pixel.length; index += 1) {
 pixel[index].style.backgroundColor = 'white';
@@ -119,7 +122,7 @@ pixel[index].style.backgroundColor = 'white';
 
 // Contruindo a Função de Pintar o Board
 
-const clearBoard = () => {
+function clearBoard() {
   const buttom = document.getElementById('clear-board');
   const pixel = document.getElementsByClassName('pixel');
   buttom.addEventListener('click', (white))
@@ -129,7 +132,7 @@ const clearBoard = () => {
 
 // #Construindo Minhas Chamadas de Funções  
 
-window.onload = () => {
+window.onload = () =>{
       buttomEvent();
       newColors();
       recoverStorage();
