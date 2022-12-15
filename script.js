@@ -109,16 +109,21 @@ const paint = () => {
   }
 };
 
+// Contruindo a Função de Pintar em branco
+
+const white = () => { 
+
+for (let index = 0; index < pixel.length; index += 1) {
+pixel[index].style.backgroundColor = 'white';
+} }
+
+// Contruindo a Função de Pintar o Board
 
 const clearBoard = () => {
   const buttom = document.getElementById('clear-board');
   const pixel = document.getElementsByClassName('pixel');
-  buttom.addEventListener('click', () => {
-    for (let index = 0; index < pixel.length; index += 1) {
-      pixel[index].style.backgroundColor = 'white';
-    }
-  });
-};
+  buttom.addEventListener('click', (white))
+}
 
 
 
