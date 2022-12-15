@@ -74,6 +74,24 @@ const initialBlack = () => {
   getColor[0].classList.add('selected');
 };
 
+// Construindo a Função de Selecionar a Cor
+
+const colorSelect = (event) => {
+  const getSelected = document.querySelector('.selected');
+  getSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+const recoverColor = () => {
+  const getColor = document.getElementsByClassName('color');
+  for (let index = 0; index < getColor.length; index += 1) {
+    getColor[index].addEventListener('click', colorSelect);
+  }
+};
+
+
+
+
 // #Construindo Minhas Chamadas de Funções  
 
 window.onload = () => {
@@ -83,5 +101,6 @@ window.onload = () => {
       localStorages();
       board();
       initialBlack();
+      recoverColor();
   };
 
