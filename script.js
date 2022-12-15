@@ -17,6 +17,7 @@ const newColors = () => {
     const palettediv = document.querySelectorAll('.color');
     for (let i = 0; i < palettediv.length; i += 1) {
       const color = backgroundPalette();
+      palettediv[0].style.backgroundColor = 'black';
       palettediv[i].style.backgroundColor = color;
       colors.push(color);
     }
