@@ -104,19 +104,26 @@ h1{
         
 }
 
+.matriz{
+    height: 80%;
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 2%;
+    text-align: center;
+    align-items: center;
+
+}
+
 #pixel-board{
-        width: 210px;
-        height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        margin-left: 44%;
-        margin-top: 5%;
+        max-width: 210px;
+        margin: 0 auto;
 }
 .pixel {
     width: 40px;
     height: 40px;
     border: 1px solid black;
+    display: inline-block;
+
   }
 
 
