@@ -1,5 +1,4 @@
 // Construindo Minhas Variaveis Globais
-const colors = [];
 const getColor = document.querySelectorAll('.color');
 const getPixel = document.getElementsByClassName('pixel');
 const buttom = document.getElementById('clear-board');
@@ -30,10 +29,12 @@ function randomColor() {
 // Feito com Ajuda de Victor na Monitoria
 
 function newColors() {
+  const getColor2 = document.querySelectorAll('.color');
+  const colors = [];
     for (let i = 0; i < getColor.length; i += 1) {
       const color = randomColor();
-      getColor[0].style.backgroundColor = 'black';
-      getColor[i].style.backgroundColor = color;
+      getColor2[0].style.backgroundColor = 'black';
+      getColor2[i].style.backgroundColor = color;
       colors.push(color);
     }
     localStorages(colors);
