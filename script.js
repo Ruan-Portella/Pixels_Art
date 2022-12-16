@@ -26,8 +26,8 @@ function randomColor() {
 
 // Construindo a Função de Salvar no LocalStorage a Cor
 
-function localStorages(colors) {
-  localStorage.setItem('colorPalette', JSON.stringify(colors));
+function localStorages(cor) {
+  localStorage.setItem('colorPalette', JSON.stringify(cor));
 }
 
 // Construindo a função de Adicionar as Cores geradas
@@ -35,10 +35,9 @@ function localStorages(colors) {
 
 function newColors() {
   const getColor2 = document.querySelectorAll('.color');
-  const colors = [];
-  for (let i = 0; i < getColor.length; i += 1) {
+  const colors = ['black'];
+  for (let i = 1; i < getColor2.length; i += 1) {
     const color = randomColor();
-    getColor2[0].style.backgroundColor = 'black';
     getColor2[i].style.backgroundColor = color;
     colors.push(color);
   }
@@ -51,18 +50,11 @@ function buttomEvent() {
   event1.addEventListener('click', newColors);
 }
 
-// Construindo a Função de Salvar no LocalStorage a Cor
-
-// function localStorages(colors) {
-//   localStorage.setItem('colorPalette', JSON.stringify(colors));
-// }
-
 // Construindo a Função de Recuperar a Cor do LocalStorage
 
 function recoverStorage() {
   const colors = JSON.parse(localStorage.getItem('colorPalette'));
-  getColor[0].style.backgroundColor = 'black';
-  for (let index = 1; index < getColor.length; index += 1) {
+  for (let index = 0; index < getColor.length; index += 1) {
     getColor[index].style.backgroundColor = colors[index];
   }
 }
@@ -135,9 +127,12 @@ function clearBoard() {
 
 window.onload = () => {
   buttomEvent();
-  newColors();
-  recoverStorage();
-  localStorages();
+  if (localStorage.getItem('colorPalette') === null) {
+    newColors();
+    recoverStorage();
+  } else {
+    recoverStorage();
+  }
   board();
   initialBlack();
   recoverColor();
