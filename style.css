@@ -87,8 +87,10 @@ h1{
     justify-content: center;
 }
 
-#color-palette{
+#color-palette:hover{
+    cursor: pointer;
     text-align: center;
+    
 
 }
 
