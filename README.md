@@ -23,4 +23,4 @@ git clone git@github.com:Ruan-Portella/Pixels_Art.git && cd Pixels_Art
 
 ## :trophy: Nota
 
-![My grade of the project - Minha nota no projeto](https://imgur.com/CWMg561)
+![My grade of the project - Minha nota no projeto](https://i.imgur.com/CWMg561.png)
